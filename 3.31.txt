@@ -1,0 +1,8 @@
+number = int(input("Введите число: "))
+if number > 999:
+    hundreds = (number // 100) % 10
+    thousands = number // 1000
+    print("Число сотен в нем:", hundreds)
+    print("Число тысяч в нем:", thousands)
+else:
+    print("Число должно быть больше 999")

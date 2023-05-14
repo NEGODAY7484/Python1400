@@ -1,0 +1,5 @@
+number = int(input('Введите трехзначное число: '))
+last_digit = number % 10  # находим последнюю цифру
+number //= 10  # удаляем последнюю цифру
+new_number = number + last_digit * 100  # приписываем последнюю цифру в конце
+print('Полученное число:', new_number)

@@ -1,0 +1,8 @@
+p = int(input('Введите число от 100 до 998: '))
+for x in range(100, 999):
+    new_x = (x % 100) * 10 + x // 100
+    if (new_x + x // 100) == p:
+        print('Число х равно', x)
+        break
+else:
+    print('Решений нет.')

@@ -1,0 +1,15 @@
+number = input("Введите трехзначное число, в котором все цифры различны: ")
+while len(number) != 3 or not number.isdigit() or len(set(number)) != 3: # проверяем, что введено трехзначное число, состоящее из различных цифр
+    number = input("Некорректный ввод. Введите трехзначное число, в котором все цифры различны: ")
+
+permutations = set() # создаем множество для хранения всех уникальных перестановок
+
+for i in range(3):
+    for j in range(3):
+        if i != j: # не переставляем одну и ту же цифру
+            for k in range(3):
+                if k != i and k != j: # не переставляем одну и ту же цифру
+                    permutation = int(number[i] + number[j] + number[k]) # получаем перестановку из трех цифр
+                    permutations.add(permutation) # добавляем перестановку в множество
+
+print(permutations) # выводим все уникальные перестановки

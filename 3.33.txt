@@ -1,0 +1,6 @@
+a = int(input("Введите трехзначное число a: "))
+last_digit = a % 10
+a = a // 10
+result = a - last_digit
+p = int(str(last_digit) + str(result))
+print("Число п равно", p)

@@ -1,0 +1,8 @@
+x = None
+for i in range(100, 1000):
+    new_num = int(str(i)[0] + str(i)[2])
+    if new_num * 10 + int(str(i)[1]) == 456:
+        x = i
+        break
+
+print(x) # выводит 357

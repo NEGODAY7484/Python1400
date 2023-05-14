@@ -1,0 +1,8 @@
+number = int(input("Введите двузначное число: "))
+if number > 9 and number < 100:
+    digit1 = number % 10
+    digit2 = number // 10
+    result = digit1 * 10 + digit2
+    print("Переставленное число:", result)
+else:
+    print("Вы ввели неверное число")

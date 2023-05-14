@@ -1,0 +1,9 @@
+# а)
+num = input("Введите 4-значное число: ")
+sum_4 = int(num[0]) + int(num[1]) + int(num[2]) + int(num[3])
+print(f"Сумма цифр 4-значного числа {num}: {sum_4}")
+
+# б)
+num = input("Введите 5-значное число: ")
+sum_5 = int(num[0]) + int(num[1]) + int(num[2]) + int(num[3]) + int(num[4])
+print(f"Сумма цифр 5-значного числа {num}: {sum_5}")

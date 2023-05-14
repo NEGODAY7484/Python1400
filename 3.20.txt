@@ -1,0 +1,18 @@
+number = int(input("Введите трехзначное число: "))
+
+# число единиц в нем
+units = number % 10
+
+# число десятков в нем
+tens = (number // 10) % 10
+
+# сумма его цифр
+sum_of_digits = units + tens + (number // 100)
+
+# произведение его цифр
+product_of_digits = units * tens * (number // 100)
+
+print("Число единиц в числе:", units)
+print("Число десятков в числе:", tens)
+print("Сумма цифр в числе:", sum_of_digits)
+print("Произведение цифр в числе:", product_of_digits)

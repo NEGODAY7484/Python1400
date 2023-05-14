@@ -1,0 +1,15 @@
+x = int(input("Введите трехзначное число: "))
+
+# Получаем вторую цифру числа
+second_digit = x // 10 % 10
+
+# Удаляем вторую цифру из числа x
+x_without_second_digit = x // 100 * 10 + x % 10
+
+# Добавляем вторую цифру числа x справа
+new_number = int(str(second_digit) + str(x_without_second_digit))
+
+if new_number == 546:
+    print("Число х равно", x)
+else:
+    print("Неверные входные данные")
