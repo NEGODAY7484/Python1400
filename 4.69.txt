@@ -1,0 +1,82 @@
+def main():
+    a = int(input("Введите значение a: "))
+    b = int(input("Введите значение b: "))
+    c = int(input("Введите значение c: "))
+    d = int(input("Введите значение d: "))
+    e = int(input("Введите значение e: "))
+
+    assert a > b and c > d > e, "Условия не выполнены"
+
+    # Создаем массив стола и заполняем его нулями
+    table = [[0] * b for _ in range(a)]
+
+    # Создаем все возможные комбинации костей домино
+    dominoes = generate_dominoes(c, d, e)
+
+    # Перебираем все возможные положения костей домино на столе
+    max_count = 0
+    for domino in dominoes:
+        for i in range(a - c + 1):
+            for j in range(b - d + 1):
+                if check_position(domino, table, i, j):
+                    count = place_domino(domino, table, i, j)
+                    max_count = max(max_count, count)
+
+    print("Максимальное количество костей домино:", max_count)
+
+
+def generate_dominoes(c, d, e):
+    dominoes = []
+
+    # Генерируем все 4 варианта костей без вращения
+    domino = [[1] * d for _ in range(c)]
+    dominoes.extend([domino, transpose(domino), flip(domino), transpose(flip(domino))])
+
+    # Добавляем кости с гранями длины е
+    for i, j in [(c, e), (e, c)]:
+        domino1 = [[1] * d for _ in range(i)]
+        domino2 = [[1] * e for _ in range(d)]
+        dominoes.extend([domino1 + domino2, flip(domino1) + domino2,
+                        domino1 + flip(domino2), flip(domino1) + flip(domino2)])
+        domino1, domino2 = domino2, domino1
+        dominoes.extend([domino1 + domino2, flip(domino1) + domino2,
+                        domino1 + flip(domino2), flip(domino1) + flip(domino2)])
+
+    return dominoes
+
+
+def transpose(matrix):
+    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+
+
+def flip(matrix):
+    return [row[::-1] for row in matrix]
+
+
+def check_position(domino, table, row, col):
+    # Проверяем, влезает ли кость домино на стол
+    if row + len(domino) > len(table) or col + len(domino[0]) > len(table[0]):
+        return False
+
+    # Проверяем, не заняты ли клетки стола, где должна быть кость домино
+    for i in range(len(domino)):
+        for j in range(len(domino[0])):
+            if domino[i][j] == 1 and table[row+i][col+j] == 1:
+                return False
+
+    return True
+
+
+def place_domino(domino, table, row, col):
+    # Размещаем кость домино на столе и возвращаем количество занятых клеток
+    count = 0
+    for i in range(len(domino)):
+        for j in range(len(domino[0])):
+            if domino[i][j] == 1:
+                table[row+i][col+j] = 1
+                count += 1
+    return count
+
+
+if __name__ == '__main__':
+    main()

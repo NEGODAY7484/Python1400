@@ -1,0 +1,14 @@
+radius = float(input("Введите радиус круга: "))
+square = float(input("Введите сторону квадрата: "))
+ 
+# посчитаем площади
+area_circle = 3.14 * radius**2
+area_square = square**2
+ 
+# сравним площади и выведем результат
+if area_circle > area_square:
+    print("Площадь круга больше")
+elif area_square > area_circle:
+    print("Площадь квадрата больше")
+else:
+    print("Площади равны")

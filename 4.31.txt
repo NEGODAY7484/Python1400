@@ -1,0 +1,25 @@
+number = input("Введите трехзначное число: ")
+first_digit = int(number[0])
+second_digit = int(number[1])
+third_digit = int(number[2])
+
+if first_digit > third_digit:
+    print("Первая цифра больше последней")
+elif first_digit < third_digit:
+    print("Последняя цифра больше первой")
+else:
+    print("Первая и последняя цифры равны")
+
+if first_digit > second_digit:
+    print("Первая цифра больше второй")
+elif first_digit < second_digit:
+    print("Вторая цифра больше первой")
+else:
+    print("Первая и вторая цифры равны")
+
+if second_digit > third_digit:
+    print("Вторая цифра больше последней")
+elif second_digit < third_digit:
+    print("Последняя цифра больше второй")
+else:
+    print("Вторая и последняя цифры равны")

@@ -1,0 +1,11 @@
+number = input("Введите шестизначное число: ")
+if len(number) != 6:
+    print("Ошибка: введено не шестизначное число")
+else:
+    sum1 = int(number[0]) + int(number[1]) + int(number[2])
+    sum2 = int(number[3]) + int(number[4]) + int(number[5])
+    if sum1 == sum2:
+        print("Число", number, "является счастливым")
+    else:
+        print("Число", number, "не является счастливым")
+

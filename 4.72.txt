@@ -1,0 +1,43 @@
+# функция для определения принадлежности точки к прямоугольнику
+def is_in_rectangle(x, y, rec_x, rec_y, rec_w, rec_h):
+    if rec_x <= x <= rec_x + rec_w and rec_y <= y <= rec_y + rec_h:
+        return True
+    else:
+        return False
+
+# функция для определения принадлежности всех точек одного прямоугольника к другому
+def are_all_points_in_rectangle(rect1_x, rect1_y, rect1_w, rect1_h,
+                                rect2_x, rect2_y, rect2_w, rect2_h):
+    for i in range(rect1_x, rect1_x + rect1_w):
+        for j in range(rect1_y, rect1_y + rect1_h):
+            if not is_in_rectangle(i, j, rect2_x, rect2_y, rect2_w, rect2_h):
+                return False
+    return True
+
+# функция для определения пересечения двух прямоугольников
+def are_rectangles_intersecting(rect1_x, rect1_y, rect1_w, rect1_h,
+                                rect2_x, rect2_y, rect2_w, rect2_h):
+    if rect1_x + rect1_w < rect2_x or rect1_x > rect2_x + rect2_w:
+        return False
+    if rect1_y + rect1_h < rect2_y or rect1_y > rect2_y + rect2_h:
+        return False
+    return True
+
+# пример использования функций
+rect1_x, rect1_y, rect1_w, rect1_h = 2, 3, 4, 5
+rect2_x, rect2_y, rect2_w, rect2_h = 3, 4, 6, 7
+
+if are_all_points_in_rectangle(rect1_x, rect1_y, rect1_w, rect1_h, rect2_x, rect2_y, rect2_w, rect2_h):
+    print("Все точки первого прямоугольника принадлежат второму")
+else:
+    print("Не все точки первого прямоугольника принадлежат второму")
+
+if are_all_points_in_rectangle(rect2_x, rect2_y, rect2_w, rect2_h, rect1_x, rect1_y, rect1_w, rect1_h):
+    print("Все точки второго прямоугольника принадлежат первому")
+else:
+    print("Не все точки второго прямоугольника принадлежат первому")
+
+if are_rectangles_intersecting(rect1_x, rect1_y, rect1_w, rect1_h, rect2_x, rect2_y, rect2_w, rect2_h):
+    print("Прямоугольники пересекаются")
+else:
+    print("Прямоугольники не пересекаются")

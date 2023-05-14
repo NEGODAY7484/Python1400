@@ -1,0 +1,14 @@
+days_in_year = 365 # количество дней в году
+weekend_days = [5, 6] # номера выходных дней (суббота и воскресенье)
+
+k = int(input("Введите номер дня к: "))
+day_of_week = (k % 7) # первый день года - понедельник (номер 0)
+
+for i in range(1, k):
+    day_of_week = (day_of_week + 1) % 7
+
+if day_of_week in weekend_days:
+    print("День номер", k, "является выходным")
+else:
+    print("День номер", k, "является рабочим")
+

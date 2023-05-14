@@ -1,0 +1,10 @@
+k = int(input("Введите натуральное число k: "))
+last_digit = k % 10
+if k == 0 or 10 < k % 100 < 20:
+    print("Мы нашли", k, "грибов в лесу")
+elif last_digit == 1:
+    print("Мы нашли", k, "гриб в лесу")
+elif last_digit in [2, 3, 4]:
+    print("Мы нашли", k, "гриба в лесу")
+else:
+    print("Мы нашли", k, "грибов в лесу")

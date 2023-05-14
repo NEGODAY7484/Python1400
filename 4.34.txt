@@ -1,0 +1,13 @@
+number = int(input("Введите трехзначное число: "))
+
+digit1 = number // 100
+digit2 = number % 100 // 10
+digit3 = number % 10
+
+for i in (digit1, digit2, digit3):
+    for j in (digit1, digit2, digit3):
+        if i == j:
+            print("Среди цифр числа есть одинаковые")
+            exit()
+
+print("Среди цифр числа нет одинаковых")

@@ -1,0 +1,24 @@
+# принимаем значения площадей круга и квадрата
+square_area = float(input("Введите площадь квадрата: "))
+circle_area = float(input("Введите площадь круга: "))
+
+# находим длину стороны квадрата
+square_side = (square_area ** 0.5)
+
+# находим радиус круга
+circle_radius = ((circle_area / 3.14) ** 0.5)
+
+# находим диаметр круга
+circle_diameter = circle_radius * 2
+
+# проверяем, уместится ли круг в квадрате
+if circle_diameter <= square_side:
+    print("Круг уместится в квадрате")
+else:
+    print("Круг не уместится в квадрате")
+
+# проверяем, уместится ли квадрат в круге
+if circle_diameter >= square_side * (2 ** 0.5):
+    print("Квадрат уместится в круге")
+else:
+    print("Квадрат не уместится в круге")

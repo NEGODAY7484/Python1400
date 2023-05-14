@@ -1,0 +1,19 @@
+number = int(input("Введите четырехзначное число: "))
+digit_4 = False
+digit_b = False
+
+if "4" in str(number):
+    digit_4 = True
+
+if "b" in str(number):
+    digit_b = True
+
+if digit_4:
+    print("Цифра 4 входит в число")
+else:
+    print("Цифра 4 не входит в число")
+
+if digit_b:
+    print("Цифра b входит в число")
+else:
+    print("Цифра b не входит в число")

@@ -1,0 +1,10 @@
+num = int(input("Введите трехзначное число: "))
+digit1 = num // 100
+digit2 = num % 100 // 10
+digit3 = num % 10
+sum_cubes = digit1 ** 3 + digit2 ** 3 + digit3 ** 3
+square_num = num ** 2
+if sum_cubes == square_num:
+    print("Квадрат числа равен сумме кубов его цифр")
+else:
+    print("Квадрат числа не равен сумме кубов его цифр")

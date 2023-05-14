@@ -1,0 +1,27 @@
+birth_date1 = input("Введите дату рождения первого человека в формате гггг-мм-дд: ")
+birth_date2 = input("Введите дату рождения второго человека в формате гггг-мм-дд: ")
+
+year1 = int(birth_date1[:4])
+month1 = int(birth_date1[5:7])
+day1 = int(birth_date1[8:])
+
+year2 = int(birth_date2[:4])
+month2 = int(birth_date2[5:7])
+day2 = int(birth_date2[8:])
+
+if year1 > year2:
+    print("Первый человек старше")
+elif year1 == year2:
+    if month1 > month2:
+        print("Первый человек старше")
+    elif month1 == month2:
+        if day1 > day2:
+            print("Первый человек старше")
+        elif day1 == day2:
+            print("Люди родились в один день")
+        else:
+            print("Второй человек старше")
+    else:
+        print("Второй человек старше")
+else:
+    print("Второй человек старше")

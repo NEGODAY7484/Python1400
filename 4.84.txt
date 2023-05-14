@@ -1,0 +1,20 @@
+p = int(input("Введите стоимость товара в копейках: "))
+
+rub = p // 100
+kop = p % 100
+
+if rub == 1:
+    rub_text = "рубль"
+elif 2 <= rub <= 4:
+    rub_text = "рубля"
+else:
+    rub_text = "рублей"
+
+if kop == 1:
+    kop_text = "копейка"
+elif 2 <= kop <= 4:
+    kop_text = "копейки"
+else:
+    kop_text = "копеек"
+
+print(f"{rub} {rub_text} {kop} {kop_text}")

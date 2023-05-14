@@ -1,0 +1,10 @@
+vel_kmh = float(input("Введите скорость в км/ч: "))
+vel_ms = float(input("Введите скорость в м/с: "))
+
+vel_kmh_mps = vel_kmh * 1000 / 3600 # перевод км/ч в м/с
+if vel_kmh_mps > vel_ms:
+    print("Скорость в км/ч больше.")
+elif vel_kmh_mps < vel_ms:
+    print("Скорость в м/с больше.")
+else:
+    print("Скорости равны.")
