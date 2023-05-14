@@ -1,0 +1,9 @@
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+c = float(input("Введите третье число: "))
+
+max_num = a if a > b and a > c else b if b > c else c
+min_num = a if a < b and a < c else b if b < c else c
+
+print("Наибольшее число:", max_num)
+print("Наименьшее число:", min_num)
