@@ -1,0 +1,7 @@
+a, b, c, d = map(float, input("Введите четыре вещественных числа через пробел: ").split())
+
+max_num = max(a, b, c, d)
+min_num = min(a, b, c, d)
+
+print("Наибольшее число:", max_num)
+print("Наименьшее число:", min_num)

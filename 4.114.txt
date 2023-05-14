@@ -1,0 +1,18 @@
+a = int(input('Введите a: '))
+b = int(input('Введите b: '))
+c = int(input('Введите c: '))
+d = int(input('Введите d: '))
+
+sum = 0
+
+if a % 3 == 0:
+    sum += a
+if b % 3 == 0:
+    sum += b
+if c % 3 == 0:
+    sum += c
+if d % 3 == 0:
+    sum += d
+
+print('Сумма чисел, кратных 3:', sum)
+
