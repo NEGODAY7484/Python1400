@@ -1,0 +1,5 @@
+def champion(team):
+    return team + " - это чемпион!"
+
+team = input("Введите название футбольной команды: ")
+print(champion(team))

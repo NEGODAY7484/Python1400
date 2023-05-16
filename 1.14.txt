@@ -1,0 +1,2 @@
+numbers = input("Введите три любых числа через пробел: ")
+print('  '.join(numbers.split()))

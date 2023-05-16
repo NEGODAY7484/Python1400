@@ -1,0 +1,6 @@
+nums = []
+for i in range(4):
+    num = input("Введите число: ")
+    nums.append(num)
+
+print(" ".join(nums))
